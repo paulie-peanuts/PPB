@@ -3,11 +3,16 @@
 title: "Introduction to R Syntax"
 output: html_notebook
 ---
+```{r message=FALSE, warning=FALSE}
+library(haven)
+library(readr)
+library(dplyr)
+```
 ```{r}
 
 message <- 'Should I pack an umbrella?'
 weather <- 'cloudy'
-high_chance_of_rain <- TRUE
+high_chance_of_rain <- FALSE
 if (weather == 'cloudy' & high_chance_of_rain)
 {
   message = 'Pack umbrella!'
@@ -15,4 +20,8 @@ if (weather == 'cloudy' & high_chance_of_rain)
   message = 'No need for umbrella!'
 }
 print (message)
-
+```
+```{r}
+songs <- read.table("Jimle.dat")
+print(head(select(songs, V1, V2)))
+```
